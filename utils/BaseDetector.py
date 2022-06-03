@@ -1,14 +1,17 @@
 from tracker import update_tracker
 import cv2
+from tracker import reset_ID
 
 
 class baseDet(object):
 
-    def __init__(self):
+    def __init__(self, reset_id=True):
 
         self.img_size = 640
         self.threshold = 0.3
         self.stride = 1
+        self.flag = reset_id
+        reset_ID(self.flag)
 
     def build_config(self):
 

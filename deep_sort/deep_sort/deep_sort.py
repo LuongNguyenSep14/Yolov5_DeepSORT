@@ -25,6 +25,9 @@ class DeepSort(object):
         self.tracker = Tracker(
             metric, max_iou_distance=max_iou_distance, max_age=max_age, n_init=n_init)
 
+    def reset_ID(self, flag):
+        self.tracker.reset_ID(flag)
+
     def update(self, bbox_xywh, confidences, clss, ori_img):
         self.height, self.width = ori_img.shape[:2]
         # generate detections
