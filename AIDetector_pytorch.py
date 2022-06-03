@@ -66,7 +66,7 @@ class Detector(baseDet):
                     img.shape[2:], det[:, :4], im0.shape).round()
 
                 for *x, conf, cls_id in det:
-                    lbl = self.names[int(cls_id)]
+                    lbl = "person"
                     x1, y1 = int(x[0]), int(x[1])
                     x2, y2 = int(x[2]), int(x[3])
                     pred_boxes.append(
