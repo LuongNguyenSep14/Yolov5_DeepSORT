@@ -8,10 +8,11 @@ from utils.datasets import letterbox
 
 class Detector(baseDet):
 
-    def __init__(self):
+    def __init__(self, reset_id=True):
         super(Detector, self).__init__()
         self.init_model()
         self.build_config()
+        self.flag = reset_id
 
     def init_model(self):
 

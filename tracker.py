@@ -13,6 +13,9 @@ deepsort = DeepSort(cfg.DEEPSORT.REID_CKPT,
                     use_cuda=True)
 
 
+def reset_ID(flag):
+    deepsort.reset_ID(flag)
+
 def plot_bboxes(image, bboxes, line_thickness=None):
     # Plots one bounding box on image img
     tl = line_thickness or round(
