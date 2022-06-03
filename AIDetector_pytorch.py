@@ -14,15 +14,11 @@ from utils.torch_utils import select_device, time_sync
 from utils.augmentations import letterbox
 
 class Detector(baseDet):
-
-    def __init__(self, reset_id=True):
+    def __init__(self, weights, imgsz = (640, 640), half = False, reset_id=True):
         super(Detector, self).__init__()
-        self.init_model()
         self.build_config()
         self.flag = reset_id
-
-    def __init__(self, weights, imgsz = (640, 640), half = False):
-        self.weights = weights 
+        self.weights = weights
     
         # Initialize
         self.device = select_device('0')
